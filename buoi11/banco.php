@@ -22,30 +22,23 @@
 </style>
 <body>
     <div class="container">
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
+        <?php
+        $class ="den";
+        for($i = 1; $i<=8; $i++){
 
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
+            for($j=1;$j<=8; $j++){
+
+                if(($i+$j)%2==0){
+                    $class = "trang";
+                }
+                else {
+                    $class = "den";
+                }
+                echo "<div class='o_co $class'></div>";
+            }       
+        }
+        ?>
         
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
-        <div class="o_co trang"></div>
-        <div class="o_co den"></div>
     </div>
 </body>
 </html>

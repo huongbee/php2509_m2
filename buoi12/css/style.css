@@ -1,0 +1,115 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3
+}
+.container{
+    width: 1098px;
+    margin: 30px auto;
+}
+.sanpham{
+    width: 350px;
+    margin: 8px;
+    background-color: #fff;
+    float: left;
+    height: 300px;
+}
+.hinh{
+    width: 150px;
+    float: left;
+    height: 240px
+}
+.hinh img{
+    width: 100%;
+    margin-top:30px
+}
+.thongtin{
+    width: 200px;
+    float: left;
+    height: 240px
+}
+
+.tensp, .giasp{
+    width: 320px;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase
+}
+.giasp{
+    color: red
+}
+
+.thongtin p{
+    line-height: 14px
+}
+.thongtin p:nth-child(4){
+    color:red;
+    font-family: tahoma
+}
+
+.thongtin h2{
+    cursor: pointer;
+}
+.thongtin h2:hover{
+    color: blue
+}
+
+@media all and (max-width:900px){
+    .container{
+        width: 850px
+    }
+    .sanpham{
+        width: 29.3333333333%;
+        margin: 1%
+    }
+    .hinh{
+        width: 40%
+    }
+    .thongtin{
+        width: 60%
+    }
+    .tensp, .giasp{
+        width: 100%
+    }
+    .thongtin p{
+        line-height: 12px;
+
+    }
+}
+
+@media (max-width:700px){
+    .container{
+        width: 90%;
+        margin: 5%
+    }
+
+    .sanpham{
+        width: 47%;
+        margin: 1%
+    }
+    .hinh{
+        width: 40%
+    }
+    
+    .thongtin{
+        width: 60%
+    }
+    .tensp, .giasp{
+        width: 100%
+    }
+    .thongtin p{
+        line-height: 12px;
+
+    }
+}
+
+
+@media (max-width:450px){
+    .thongtin{
+        display: none
+    }
+    .hinh{
+        width: 100%
+    }
+}
