@@ -14,184 +14,71 @@ $mangsp = array(
     array(
         "TenSP" =>"iPhone X",
         "Hinh"  =>"https://cdn.tgdd.vn/Products/Images/42/93709/iphone-7-plus-red-128gb-400x460.png",
-        "Gia"   =>30000000
+        "Gia"   =>30000000,
+        'link'  =>'https://www.thegioididong.com/dtdd/samsung-galaxy-j7-plus'
     ),
     array(
         "TenSP" =>"iPhone 6",
         "Hinh"  =>"https://cdn.tgdd.vn/Products/Images/42/87839/iphone-7-plus-128gb-de-400x460.png",
-        "Gia"   =>40000000
+        "Gia"   =>40000000,
+        'link'  =>'https://www.thegioididong.com/dtdd/samsung-galaxy-s8'
     ),
     array(
         "TenSP" =>"iPhone 7",
         "Hinh"  =>"https://cdn.tgdd.vn/Products/Images/42/73703/iphone-6s-128gb-hong-1-400x450.png",
-        "Gia"   =>50000000
+        "Gia"   =>50000000,
+        'link'  =>'https://www.thegioididong.com/dtdd/samsung-galaxy-s8'
     ),
     array(
         "TenSP" =>"iPhone 8",
         "Hinh"  =>"https://cdn.tgdd.vn/Products/Images/42/113126/sony-xperia-xz-premium-pink-gold-400x460.png",
-        "Gia"   =>60000000
+        "Gia"   =>60000000,
+        'link'  =>'https://www.thegioididong.com/dtdd/samsung-galaxy-s8'
     ),
     array(
         "TenSP" =>"iPhone 9",
         "Hinh"  =>"https://cdn.tgdd.vn/Products/Images/42/87839/iphone-7-plus-128gb-de-400x460.png",
-        "Gia"   =>70000000
+        "Gia"   =>70000000,
+        'link'  =>'https://www.thegioididong.com/dtdd/samsung-galaxy-j7-plus'
     ),
     array(
-        "TenSP" =>"iPhone ",
+        "TenSP" =>"iPhone X",
         "Hinh"  =>"https://cdn.tgdd.vn/Products/Images/42/103241/htc-u11-1-400x460.png",
-        "Gia"   =>80000000
+        "Gia"   =>80000000,
+        'link'  =>'https://www.thegioididong.com/dtdd/samsung-galaxy-s8'
     )
 );
+
+
+
 
 
 ?>
 
 <body>
     <div class="container">
+        <?php
+        foreach($mangsp as $sanpham):
+        ?>
         <div class="sanpham">
             <div class="hinh">
-                <a href="https://www.thegioididong.com/dtdd/iphone-6-32gb-gold"><img src="images/iphone6.png" alt="iphone 6"></a>
+                <a href="<?=$sanpham['link']?>">
+                    <img src="<?=$sanpham['Hinh']?>" alt="<?= $sanpham['TenSP']?>">
+                </a>
             </div>
             <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
+                <h2><?= $sanpham['TenSP']?></h2>
                 <p>Trong hộp có: Sạc, Tai nghe</p>
                 <p>Trong hộp có: Sạc, Tai nghe</p>
                 <p>Khuyến mãi:</p>
                 <p>Trong hộp có: Sạc, Tai nghe</p>
                 <p>Trong hộp có: Sạc, Tai nghe</p>
             </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
+            <div class="tensp"><?php echo $sanpham['TenSP']?></div>
+            <div class="giasp"><?= $sanpham['Gia']?>đ</div>
         </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
-        <div class="sanpham">
-            <div class="hinh">
-                <img src="images/iphone6.png" alt="iphone 6">
-            </div>
-            <div class="thongtin">
-                <h2>iPhone 6 64gb</h2>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Khuyến mãi:</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-                <p>Trong hộp có: Sạc, Tai nghe</p>
-            </div>
-            <div class="tensp">iPhone 6 64gb</div>
-            <div class="giasp">8.000.000đ</div>
-
-        </div>
+        <?php endforeach ?>
     </div>
+
 </body>
 </html>
