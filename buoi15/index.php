@@ -12,7 +12,7 @@
 		<div class="row justify-content-center">
 			<div class="col-6 ">
 				<h2>Contact Form</h2>
-				<form method="GET" action="get-data.php">
+				<form method="POST" action="get-data.php">
 					<div class="form-group">
 					    <label for="title">Title</label>
 					    <input type="text" name="title" class="form-control" id="title" placeholder="Nhập tiêu đề" value="<?= isset($_GET['title']) ? $_GET['title'] : ''?>">
