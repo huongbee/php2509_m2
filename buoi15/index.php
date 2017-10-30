@@ -31,6 +31,21 @@ if(isset($_GET['btnSend'])){
 	if($message == ""){
 		$error['message'] = "Vui lòng nhập message";
 	}
+
+
+	$age = $_GET['age'];
+	if(!is_numeric($age)){
+		$error['age'] = "Vui lòng nhập tuổi là số";
+	}
+
+	//print_r($error);
+
+	if(!empty($error)){
+		foreach ($error as $key=>$err) {
+			$error[$key] = '<div class="alert alert-danger">'.$err.'</div>';
+		}
+	}
+	//print_r($error);
 }
 
 ?>
@@ -48,19 +63,21 @@ if(isset($_GET['btnSend'])){
 
 			  		<div class="form-group">
 					    <label for="age">Age</label>
-					    <input type="text" name="age" class="form-control" id="age" placeholder="Nhập tuổi" >
-					   
+					    <input type="text" name="age" class="form-control" id="age" placeholder="Nhập tuổi" value="<?=@$age?>">
+					   	<?=@$error['age']?>
 			  		</div>
 
 				  	<div class="form-group">
 					    <label for="email">Email address</label>
-					    <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+					    <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" value="<?=@$email?>">
 					    <?=@$error['email']?>
 				  	</div>
 			 
 			  		<div class="form-group">
 					    <label for="message">Message</label>
-					    <textarea class="form-control" name="message" id="message" rows="5"></textarea>
+					    <textarea class="form-control" name="message" id="message" rows="5" >
+					    	<?=@$message?>
+					    </textarea>
 					    <?=@$error['message']?>
 			  		</div>
 
