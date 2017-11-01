@@ -17,24 +17,34 @@ if(isset($_POST['btnSend'])){
 	echo"</pre>";
 
 	//echo $file['name'];
-	$path = "datas/$file[name]";
+	
 	$tmpname = $file['tmp_name'];
 
-	if($file['size'] > 499990){ //1kb
+	if($file['size'] > 49999000){ //1kb
 		echo "File quá lớn";
 
 	}
-	else{
-		move_uploaded_file($tmpname, $path);
 
-		if(file_exists($path)){	
-			
-			echo "thành công";
+	else{
+		$arrExt = ['.png', '.jpg', '.gif'];
+		//png
+		$vitriEnd = strripos($file['name'], '.');
+		echo $ext = strtolower(substr($file['name'],$vitriEnd)); //.png
+
+		if(!in_array($ext, $arrExt)){
+			echo "File ko được phép chọn";
 		}
+
 		else{
-			echo " ko thành công";
+			$name = substr($file['name'], 0,$vitriEnd);
+			$newName = $name.'-'.time().rand(121212,23131311).$ext;
+			$path = "datas/$newName";
+			move_uploaded_file($tmpname, $path);
+
+			echo 'thành công';
 		}
 	}
+
 	/*
 	
 
@@ -45,7 +55,7 @@ if(isset($_POST['btnSend'])){
 	*/
 	
 	///unlink('datas/1.jpg'); xóa file khỏi folder
-	// if(file_exists($path)){
+	// if(file_exists($tmpname)){
 	// 	echo "thành công";
 	// }
 	// else{
