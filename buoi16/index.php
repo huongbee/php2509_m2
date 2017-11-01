@@ -19,11 +19,27 @@ if(isset($_POST['btnSend'])){
 	//echo $file['name'];
 	$path = "datas/$file[name]";
 	$tmpname = $file['tmp_name'];
+
+	if($file['size'] > 499990){ //1kb
+		echo "File quá lớn";
+
+	}
+	else{
+		move_uploaded_file($tmpname, $path);
+
+		if(file_exists($path)){	
+			
+			echo "thành công";
+		}
+		else{
+			echo " ko thành công";
+		}
+	}
 	/*
 	
 
 	2.check filesize: cho phép <= 1Mb
-	3.chỉ cho phép upload file ảnh
+	3.chỉ cho phép upload file ảnh (png, jpg, gif)
 	1.đổi tên file trước khi upload
 
 	*/
@@ -36,22 +52,14 @@ if(isset($_POST['btnSend'])){
 	// 	echo " ko thành công";
 	// }
 
-	move_uploaded_file($tmpname, $path);
-
-	if(is_uploaded_file($path)){	
-		
-		echo "thành công";
-	}
-	else{
-		echo " ko thành công";
-	}
+	
 }
 ?>
 <body>
 	<div class="container">
 		<form method="POST" enctype="multipart/form-data">
 
-			<input type="file" name="file_upload">
+			<input type="file" name="file_upload" accept="image/*">
 			<button type="submit" name="btnSend" class="btn btn-primary">Upload</button>
 
 		</form>
