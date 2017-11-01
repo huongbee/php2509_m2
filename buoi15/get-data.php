@@ -1,6 +1,7 @@
 <?php
 echo $_POST['title'];
-
+echo "<br>";
+echo $_REQUEST['title'];
 
 // if(isset($_GET['btnSend'])){
 

@@ -12,7 +12,7 @@
 		<div class="row justify-content-center">
 			<div class="col-6 ">
 				<h2>Contact Form</h2>
-				<form method="POST" action="get-data.php">
+				<form method="GET" action="get-data.php">
 					<div class="form-group">
 					    <label for="title">Title</label>
 					    <input type="text" name="title" class="form-control" id="title" placeholder="Nhập tiêu đề" value="<?= isset($_GET['title']) ? $_GET['title'] : ''?>">
@@ -33,9 +33,7 @@
 			 
 			  		<div class="form-group">
 					    <label for="message">Message</label>
-					    <textarea class="form-control" name="message" id="message" rows="5" >
-					    	<?=@$message?>
-					    </textarea>
+					    <textarea class="form-control" name="message" id="message" rows="5" ><?=@$message?></textarea>
 					    <?=@$error['message']?>
 			  		</div>
 
