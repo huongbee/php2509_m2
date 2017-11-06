@@ -20,9 +20,24 @@ if(isset($_POST['btnSend'])){
 
 	$_SESSION['username'] = trim($_POST['username']);
 	$_SESSION['password'] = md5(trim($_POST['password']));
+
+
+	
 	//echo $_SESSION['username'];
+	if(isset($_COOKIE['username']) && isset($_COOKIE['password']) && $_COOKIE['username'] == "admin" && $_COOKIE['password'] == md5('admin123')){
+
+		$_SESSION['username'] = $_COOKIE['username'];
+
+		header("location:admin.php");
+
+	}
 
 	if($_SESSION['username'] == "admin" && $_SESSION['password'] == md5('admin123')){
+
+		if(isset($_POST['remember']) && $_POST['remember'] ==1){
+			setcookie('username',"admin",time()+120);
+			setcookie('password',md5('admin123'),time()+120);
+		}
 		//đăng nhập thành công
 		if(isset($_SESSION['error']))
 			unset($_SESSION['error']);

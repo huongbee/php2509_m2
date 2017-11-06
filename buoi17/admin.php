@@ -1,10 +1,16 @@
 <?php
 session_start();
 if(!isset($_SESSION['username']) || !isset($_SESSION['password']) || $_SESSION['username'] != "admin" || $_SESSION['password'] != md5('admin123')){
-	header("location:login.php");
+
+	if(!isset($_COOKIE['username']) || !isset($_COOKIE['password']) || $_COOKIE['username'] != "admin" || $_COOKIE['password'] != md5('admin123')){
+		header("location:login.php");
+	}
+
+	//header("location:login.php");
 }
 
-echo "Chào bạn ".$_SESSION['username'];
+//echo "Chào bạn ".$_SESSION['username'];
+//echo "Chào bạn ".$_COOKIE['username'];
 
 ?>
 <!DOCTYPE html>
@@ -23,6 +29,6 @@ echo "Chào bạn ".$_SESSION['username'];
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	<div><a href="logout.php">Login out</a></div>
+	<div><a href="logout.php">Logout</a></div>
 </body>
 </html>

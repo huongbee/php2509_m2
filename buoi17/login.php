@@ -26,7 +26,7 @@ session_start();
 						<label class="form-control-label">Username</label>
 					</div>
 					<div class="col-md-9">
-						<input type="text" name="username" class="form-control" placeholder="Enter username">
+						<input type="text" name="username" class="form-control" placeholder="Enter username" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -34,12 +34,12 @@ session_start();
 						<label class="form-control-label">Password</label>
 					</div>
 					<div class="col-md-9">
-						<input type="password" name="password" class="form-control" placeholder="Enter your pw">
+						<input type="password" name="password" class="form-control" placeholder="Enter your pw" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col-md-9">
-						<label><input type="checkbox" name="remember"> Remember me?</label>
+						<label><input type="checkbox" name="remember" value="1"> Remember me?</label>
 					</div>
 				</div>
 				<div class="form-group">
