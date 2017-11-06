@@ -46,17 +46,18 @@ if(isset($_POST['btnSend'])){
 	}
 	//var_dump($flag);
 	// 1: true
-	// 2: false return
+	// 2: false break
 	// 3: true
 	//die;
 	if($flag){
+		$arrExt = ['.png','.gif'];
 		foreach($file['name'] as $key=>$name){
-			$arrExt = ['.png','.gif'];
 			$vitriEnd = strripos($name, '.');
 			$ext = strtolower(substr($name,$vitriEnd));
 			if(!in_array($ext,$arrExt)){
 				$flag = false;
 			}
+			//break;
 		}
 		if($flag){
 			foreach($file['tmp_name'] as $key=>$ten_tam){
