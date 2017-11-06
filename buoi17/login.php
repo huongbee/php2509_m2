@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +14,12 @@
 		<div class="row  justify-content-center">
 			<div class="col-md-6">
 			<h2>User Login</h2>
+			<?php
+
+			if(isset($_SESSION['error'])):
+				echo "<div class='alert alert-danger'>$_SESSION[error]</div>";
+			endif
+			?>
 			<form method="POST" action="xuly.php">
 				<div class="form-group">
 					<div class="col-sm-3">
