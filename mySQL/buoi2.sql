@@ -77,6 +77,12 @@ INSERT INTO product(name,id_type,description,price)
 SELECT name,id_type,description,price FROM product b where b.name = 'Sản phẩm 1'
 
 
+INSERT INTO `producttype` (`name`)
+SELECT * FROM 'abc'
+WHERE 1=1
+LIMIT 1
+
+
 
     
 
