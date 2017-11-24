@@ -100,8 +100,59 @@ FROM foods f
 INNER JOIN food_type t
 ON f.id_type = t.id
 
-
-
-
 --r:10s
+
+--2.2
+    --1
+    SELECT t.name as TenLoai, count(f.id) as TongSP
+    FROM foods f
+    INNER JOIN food_type t
+    ON f.id_type = t.id
+    GROUP BY t.name
+    --ORDER BY TongSP ASC
+    ORDER BY count(f.id) ASC
+
+
+    --2
+    SELECT t.name as TenLoai, avg(f.price) as GiaTB
+    FROM foods f
+    INNER JOIN food_type t
+    ON f.id_type = t.id
+    GROUP BY t.name
+    ORDER BY GiaTB ASC
+
+    --3 min/max (2)
+
+    --4
+    SELECT t.name as TenLoai, sum(f.price) as TongTien, 
+            count(f.id) as SoSP
+    FROM foods f
+    INNER JOIN food_type t
+    ON f.id_type = t.id
+    WHERE price BETWEEN 50000 AND 100000
+    GROUP BY t.name
+
+    --5
+    --số hóa đơn, ngày đặt, tổng số sản phẩm, tổng thành tiền.
+    SELECT b.id as SoHD, date_order as NgayDat, 
+            count(bd.id_bill) as TongSP,
+            total as TongTien
+    FROM bills b 
+    INNER JOIN bill_detail bd 
+        ON b.id = bd.id_bill
+    GROUP BY b.id
+
+
+    --6
+    --SELECT sum(f.price)/count(f.price) as TB
+    
+    SELECT avg(f.price) as TB
+    FROM foods f
+    INNER JOIN food_type t
+    ON f.id_type = t.id
+    WHERE t.name like 'Bún, mì, miến, phở'
+
+
+
+
 
