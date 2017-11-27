@@ -16,26 +16,35 @@ class DBConnect{
 		    echo "Lỗi";
 		    echo $e->getMessage();
 		}
+	//	return $dbh;
 	}
+
+	// public function setQuery($query){
+	// 	$this->sql = $query;
+	// }
 
 	public function setStatement($query,$param=array()){
 		$stmt = $this->connect->prepare($query);
+		//$stmt = $dbh->prepare($sql);
 		if(!empty($param)){
-			$number = count($param); 
+			$number = count($param); //4   array('12', '16',5, 500000)
 			for($i=1; $i <= $number; $i++){
 				$stmt->bindParam($i,$param[$i-1]);
 			}
-		}		
+		}
+		
 		$this->statement = $stmt;
 	}
 
 	//TH1: insert/update/delete
 	public function executeQuery($query,$param=array()){
 		$this->setStatement($query,$param);
-		return $this->statement->execute();
+		//$stmt = $this->statement->execute();
+		return $this->statement->execute();;
 
 	}
 	//TH2: SELECT 1
+
 	public function loadOneRow($query,$param=array()){
 		$check = $this->executeQuery($query,$param);
 		if($check){
@@ -55,9 +64,6 @@ class DBConnect{
 			return false;
 		}
 	}
-
-	
-
 
 
 }
