@@ -47,26 +47,42 @@ try{
 
     //$sql = "SELECT * FROM food_type WHERE name=?";
    // $stmt->bindParam(1,$name);
-    $sql = "SELECT * FROM food_type WHERE name=:tenloai OR id=:maSP";
-    $name = "Bào ngư";
-    $id = 8;
+    // $sql = "SELECT * FROM food_type WHERE name=:tenloai OR id=:maSP";
+    // $name = "Bào ngư";
+    // $id = 8;
     
+    // $stmt = $dbh->prepare($sql);
+
+    // $stmt->bindParam(':tenloai',$name);
+    // $stmt->bindParam(':maSP',$id);
+
+    $sql = "INSERT INTO bill_detail(id_bill,id_food,quantity, price) VALUES(?,?,?,?)";
+
+    $id_bill = 12;
+    $id_food = 16;
+    $quantity = 5;
+    $price = 50000;
+
     $stmt = $dbh->prepare($sql);
 
-   $stmt->bindParam(':tenloai',$name);
-   $stmt->bindParam(':maSP',$id);
+    $stmt->bindParam(1,$id_bill);
+    $stmt->bindParam(2,$id_food);
+    $stmt->bindParam(3,$quantity);
+    $stmt->bindParam(4,$price);
     
     $check = $stmt->execute(); //true
 
-    if($check){
-        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        echo "<pre>";
-        print_r($result);
-        echo "</pre>";
-    }
-    else{
-        echo "Lỗi thực thi query ";
-    }
+    var_dump($check);
+
+    // if($check){
+    //     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+    //     echo "<pre>";
+    //     print_r($result);
+    //     echo "</pre>";
+    // }
+    // else{
+    //     echo "Lỗi thực thi query ";
+    // }
 
 
 
