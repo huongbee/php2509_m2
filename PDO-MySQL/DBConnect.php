@@ -56,42 +56,22 @@ class DBConnect{
 		}
 	}
 
-	
+
 
 
 
 }
 
 
-$db = new DBConnect; //connect
-// $sql = "INSERT INTO bill_detail(id_bill,id_food,quantity, price) VALUES(?,?,?,?)";
-// $db->setQuery($sql);
-// $param = array(10,15,4,10000);
-// $db->setStatement($param);
-
-//$sql = "DELETE FROM bill_detail WHERE id=15";
-// $db->setQuery($sql);
-// $db->setStatement();
-// $r = $db->executeQuery();
-
+$db = new DBConnect; 
+//$sql = "INSERT INTO bill_detail(id_bill,id_food,quantity, price) VALUES(10,52,5000,89)";
+//$p = array(10,52,5,89);
+//$sql = "UPDATE bill_detail SET quantity=8 WHERE id=24";
+//$p = array(12,24);
 //$r = $db->executeQuery($sql);
-
-// $sql = "UPDATE bill_detail SET id_bill=? WHERE id=?";
-// $param = array(6,21);
-// // $sql = "DELETE FROM bill_detail WHERE id=?";
-// // $param = array(22);
-// // $sql = "INSERT INTO bill_detail(id_bill,id_food,quantity, price) VALUES(?,?,?,?)";
-// // $param = array(10,15,7,10000000);
-// $r = $db->executeQuery($sql,$param);
-
 // $sql = "SELECT * FROM food_type WHERE id=5";
-// //$param = array(1);
 // $r = $db->loadOneRow($sql);
-
-
 $sql = "SELECT * FROM food_type WHERE id>=5";
-//$param = array(1);
 $r = $db->loadMoreRows($sql);
-
-var_dump($r);
+print_r($r);
 ?>
